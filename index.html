@@ -35,7 +35,10 @@
     </table>
     <div id="search-div">
         <p>Search for your currency</p>
-        <input type="text" id="currencySearch" placeholder="Search Currency" oninput="filterCurrency()">
+        <div id="textBox">
+            <input type="text" id="currencySearch" placeholder="Search Currency" oninput="filterCurrency()">
+            <button onclick="clearSearch()">✖</button>
+        </div>
     </div>
     <table>
         <thead>

@@ -89,6 +89,11 @@ function filterRates() {
     displayAllRates(filteredRates)
 }
 
+function clearSearch() {
+    document.getElementById("currencySearch").value = "";
+    filterRates();  
+}
+
 
 // fetch data when page loads 
 fetchExchangeRates();

@@ -70,6 +70,30 @@ tr:hover {
     /* margin-top: 18px; */
 }
 
+#textBox {
+    display: flex;
+    justify-content: baseline;
+    margin: 10px;
+}
+
+#textBox button {
+    background-color: #1e1e1e;
+    color: #d4af37;
+    width: 35px;
+    height: 35px;
+    margin-top: 15px;
+    /* border-radius: 10px; */
+    transition: transform 0.3s ease;
+}
+
+#textBox button:hover {
+    background-color:crimson ;
+    color: white;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/*  Base currency drop down field */
 #currencySearch { 
     padding: 10px;
     margin: 10px;
