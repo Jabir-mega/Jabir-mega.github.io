@@ -3,10 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Exchange Rate Tracker</title>
+    <link rel="stylesheet" href="index2.css">
+    <!-- <link rel="stylesheet" href="index.css"> -->
 </head>
 <body>
-    <h1>You a bitch Qasim</h1>
-    </h1>
+    <div id="header">
+        <!-- <img src="download.png"> -->
+        <h1>Exchange Rate Tracker</h1>
+    </div>
+    <label for="baseCurrency">Select prefered base currency:</label>
+    <select id="baseCurrency">
+        <option value="USD">USD - United States Dollar</option>
+        <option value="GBP">GBP - British Pound</option>
+        <option value="EUR">EUR - Euro</option>
+        <option value="KES">KES - Kenyan shilling</option>
+        <option value="CAD">CAD - Canadian Dollar</option>
+        <option value="AUD">AUD - Australian Dollar</option>
+        <option value="QAR">QAR - Qatari Riyal  </option>
+    </select>
+    <table>
+        <thead>
+            <tr>
+                <th>Currency</th>
+                <th>Rate  (vs USD) -> 1</th>
+                <th>Rate  (vs USD) -> 100</th>
+            </tr>
+        </thead>
+        <tbody id="exchangeRates">
+        </tbody>
+    </table>
+    <div id="search-div">
+        <p>Search for your currency</p>
+        <input type="text" id="currencySearch" placeholder="Search Currency" oninput="filterCurrency()">
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Currency</th>
+                <th>Rate  (vs USD) -> 1</th>
+                <th>Rate  (vs USD) -> 100</th>
+            </tr>
+        </thead>
+        <tbody id="foreing2"> 
+
+        </tbody>
+    </table>
+
+    <script src="index.js"></script>
 </body>
 </html>
