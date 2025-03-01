@@ -41,6 +41,7 @@ async function fetchExchangeRates() {
 // IN the above fucntion:
 //  async allows us to use wait in the function which makes javascript wait for response before moving on
 
+// function to display the specified rates 
 function displayRates(rates) {
     const currencies = ['USD', 'CAD', 'AUD', 'QAR', 'EUR', 'GBP', 'KES']; //currencies interested in 
     const tableBody= document.getElementById('exchangeRates');
@@ -58,7 +59,7 @@ function displayRates(rates) {
         tableBody.innerHTML += row;
     });
 }
-
+// function to display all the rates
 function displayAllRates(rates){
     const tableBody = document.getElementById("foreing2");
     tableBody.innerHTML= '';
@@ -76,6 +77,7 @@ function displayAllRates(rates){
     });
 } 
 
+// function that filters for the specified for user specific rates 
 function filterRates() {
     const searchFilter = document.getElementById("currencySearch").value.toUpperCase();     
     const filteredRates = {};
@@ -88,7 +90,6 @@ function filterRates() {
 
     displayAllRates(filteredRates)
 }
-
 function clearSearch() {
     document.getElementById("currencySearch").value = "";
     filterRates();  

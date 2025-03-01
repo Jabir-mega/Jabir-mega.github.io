@@ -49,8 +49,16 @@ tr:hover {
     transition: background 0.3s ease-in-out;
 }
 
-/* Search bar styling  */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
 
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+
+/* Search bar styling  */
 #search-div {
     display: flex;
     align-items: baseline;
@@ -93,6 +101,7 @@ tr:hover {
     transform: scale(1.1);
 }
 
+
 /*  Base currency drop down field */
 #currencySearch { 
     padding: 10px;
@@ -115,6 +124,9 @@ tr:hover {
     color: #d4af37;
 }
 
+
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     table {
@@ -126,6 +138,10 @@ tr:hover {
     }
 
     #search-div {
+        width: 90%;
+    }
+     
+    #textBox {
         width: 90%;
     }
 }
