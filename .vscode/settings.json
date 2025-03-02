@@ -17,5 +17,6 @@
         "titleBar.activeForeground": "#000000",
         "titleBar.inactiveBackground": "#ff000099",
         "titleBar.inactiveForeground": "#00000099"
-    }
+    },
+    "liveServer.settings.port": 5502
 }

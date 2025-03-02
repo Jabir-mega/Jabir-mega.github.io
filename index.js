@@ -1,4 +1,4 @@
-const apiKey= "34569bbf11d04ab1aff832bb"; //variable to store api key 
+// const apiKey= "34569bbf11d04ab1aff832bb"; //variable to store api key 
 // const apiUrl = "https://v6.exchangerate-api.com/v6/34569bbf11d04ab1aff832bb/latest/KES"; //base currency KES
 // const apiUrl = "https://v6.exchangerate-api.com/v6/34569bbf11d04ab1aff832bb/latest/USD"; //base currency USD
 let allRates = {};
@@ -6,10 +6,14 @@ let allRates = {};
 // function to fetch data from the Exchange rate API
 async function fetchExchangeRates() {
     try{
+        // Show loading message and force browser to render it
+        const loadingMessage = document.getElementById("loadingMessage");
+        loadingMessage.style.display = "block";
+
         const baseCurrency = document.getElementById("baseCurrency").value; 
         // const apiUrl = "https://v6.exchangerate-api.com/v6/34569bbf11d04ab1aff832bb/latest/USD"; //base currency USD
 
-        const apiUrl= `https://v6.exchangerate-api.com/v6/34569bbf11d04ab1aff832bb/latest/${baseCurrency}`; //Base currency USD 
+        // const apiUrl= `https://v6.exchangerate-api.com/v6/34569bbf11d04ab1aff832bb/latest/${baseCurrency}`; //Base currency USD 
         console.log("URL with base currency: ", apiUrl);
 
         console.log("Fetching data...");
@@ -34,9 +38,13 @@ async function fetchExchangeRates() {
         }
     } catch (error){ // this is the try cathc block
         console.error("Fetch error", error);
+    } finally {
+        loadingMessage.style.display = "none";
     }
 
 }
+
+
 
 // IN the above fucntion:
 //  async allows us to use wait in the function which makes javascript wait for response before moving on
@@ -61,6 +69,7 @@ function displayRates(rates) {
 }
 // function to display all the rates
 function displayAllRates(rates){
+
     const tableBody = document.getElementById("foreing2");
     tableBody.innerHTML= '';
 
@@ -79,7 +88,7 @@ function displayAllRates(rates){
 
 // function that filters for the specified for user specific rates 
 function filterRates() {
-    const searchFilter = document.getElementById("currencySearch").value.toUpperCase();     
+    const searchFilter = document.getElementById("currencySearch").value.toUpperCase();
     const filteredRates = {};
     
     Object.keys(allRates).forEach(currency => {
@@ -88,7 +97,13 @@ function filterRates() {
         }
     });
 
-    displayAllRates(filteredRates)
+    // logic to check if the currency code exists and to display "NO Results found" if not 
+    if (Object.keys(filteredRates).length === 0) {
+        document.getElementById("noResultsMessage").style.display = "block";  // Show message
+    } else {
+        document.getElementById("noResultsMessage").style.display = "none";  // Hide message
+        displayAllRates(filteredRates);
+    }
 }
 function clearSearch() {
     document.getElementById("currencySearch").value = "";
@@ -105,3 +120,6 @@ document.getElementById("baseCurrency").addEventListener("change", fetchExchange
 document.getElementById("currencySearch").addEventListener("input", filterRates);
 // Auto-refresh every 5 minutes
 setInterval(fetchExchangeRates, 300000);  // 300000 ms = 5 minutes
+
+
+console.log(Object.keys);

@@ -12,16 +12,25 @@
         <!-- <img src="download.png"> -->
         <h1>Exchange Rate Tracker</h1>
     </div>
-    <label for="baseCurrency">Select prefered base currency:</label>
-    <select id="baseCurrency">
-        <option value="USD">USD - United States Dollar</option>
-        <option value="GBP">GBP - British Pound</option>
-        <option value="EUR">EUR - Euro</option>
-        <option value="KES">KES - Kenyan shilling</option>
-        <option value="CAD">CAD - Canadian Dollar</option>
-        <option value="AUD">AUD - Australian Dollar</option>
-        <option value="QAR">QAR - Qatari Riyal  </option>
-    </select>
+    <div id="converter">
+
+    </div>
+    <div id="currencySelector">
+        <!-- <label for="baseCurrency">Select prefered base currency:</label> -->
+        <p for="baseCurrency">Select prefered base currency:</p>
+        <select id="baseCurrency">
+            <option value="USD">USD - United States Dollar</option>
+            <option value="GBP">GBP - British Pound</option>
+            <option value="EUR">EUR - Euro</option>
+            <option value="KES">KES - Kenyan shilling</option>
+            <option value="CAD">CAD - Canadian Dollar</option>
+            <option value="AUD">AUD - Australian Dollar</option>
+            <option value="QAR">QAR - Qatari Riyal  </option>
+        </select>
+    </div>
+    <div id="loadingMessage" >
+        Loading exchange rates...
+    </div>
     <table>
         <thead>
             <tr>
@@ -31,6 +40,7 @@
             </tr>
         </thead>
         <tbody id="exchangeRates">
+
         </tbody>
     </table>
     <div id="search-div">
@@ -40,7 +50,12 @@
             <button onclick="clearSearch()">✖</button>
         </div>
     </div>
-
+    <p id="noResultsMessage" style="display: none; color: red; font-weight: bold; text-align: center;">
+        No results found.
+    </p>
+    <!-- <div id="loadingMessage" >
+        Loading exchange rates...
+    </div> -->
     <table>
         <thead>
             <tr>
